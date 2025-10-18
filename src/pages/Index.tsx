@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ProblemStatement } from "@/components/ProblemStatement";
 import { ProductSuite } from "@/components/ProductSuite";
@@ -11,15 +12,32 @@ import { CTASection } from "@/components/CTASection";
 const Index = () => {
   return (
     <main className="relative">
-      <Hero />
-      <ProblemStatement />
-      <ProductSuite />
-      <HowItWorks />
-      <SolutionsByUser />
+      <Header />
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="problem">
+        <ProblemStatement />
+      </div>
+      <div id="products">
+        <ProductSuite />
+      </div>
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
+      <div id="solutions">
+        <SolutionsByUser />
+      </div>
       <IntelligentWorkflow />
-      <AnalystPerformance />
-      <Differentiators />
-      <CTASection />
+      <div id="performance">
+        <AnalystPerformance />
+      </div>
+      <div id="differentiators">
+        <Differentiators />
+      </div>
+      <div id="cta">
+        <CTASection />
+      </div>
     </main>
   );
 };
