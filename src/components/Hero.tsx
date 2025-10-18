@@ -1,19 +1,16 @@
 import { Button } from "./ui/button";
+import bannerBg from "@/assets/banner_BG.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+        <img 
+          src={bannerBg} 
+          alt="Financial analytics dashboard background" 
           className="w-full h-full object-cover"
-        >
-          <source src="/banner_video.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
