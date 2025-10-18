@@ -40,7 +40,7 @@ export const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-muted-foreground">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-white">
             <div className="flex items-center gap-2">
               <span>✓</span>
               <span>Trusted by SEBI Registered Research Analysts</span>
