@@ -153,7 +153,7 @@ export const ProductSuite = () => {
                     </div>
 
                     {/* Image/Visual Column */}
-                    <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "min-h-[240px] lg:min-h-[300px]" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "h-[200px]" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {product.image ? (
                         <img 
                           src={product.image} 
