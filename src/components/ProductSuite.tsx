@@ -63,7 +63,9 @@ export const ProductSuite = () => {
         "Dedicated iOS & Android Apps with your branding",
         "Swipe-Friendly Research Cards designed for mobile",
         "One-Tap Trading Intent to capture client interest",
-        "Offline Access for poor connectivity areas"
+        "Offline Access for poor connectivity areas",
+        "Fully customisable and modular architecture",
+        "Light weight SDKs to integrate with your existing web and mobile apps"
       ],
       gradient: "from-accent/20 to-accent/5",
       borderColor: "border-accent/30"
