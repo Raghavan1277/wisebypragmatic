@@ -28,42 +28,28 @@ export const ProductSuite = () => {
   const products = [
     {
       icon: FileText,
-      title: "WISE Research Control Center",
-      subtitle: "Professional Research Creation & Distribution",
-      description: "Create professional-grade research calls in minutes instead of hours with AI assistance, real-time market integration, and maker-checker workflow.",
+      title: "Research Control Center",
+      subtitle: "For Analysts",
+      description: "Create, validate, and distribute research calls in one seamless workflow.",
       features: [
-        "Smart Research Creation with AI suggestions",
-        "Real-Time Market Integration (NSE/BSE)",
+        "Smart Research Creation with pre-built templates",
         "Maker-Checker Workflow for quality control",
-        "Multi-Stock Basket Recommendations",
-        "Intelligent Call Management & audit trail"
-      ],
-      metrics: [
-        { label: "80% faster", desc: "research creation" },
-        { label: "100% SEBI", desc: "compliant" },
-        { label: "Complete", desc: "audit trail" },
-        { label: "Instant", desc: "distribution" }
+        "Multi-Channel Distribution (App, WhatsApp, Email, SMS)",
+        "Call Lifecycle Management (Carry-forward, Exit, Book Profit)"
       ],
       gradient: "from-primary/20 to-primary/5",
       borderColor: "border-primary/30"
     },
     {
       icon: Brain,
-      title: "WISE AI Co-Analyst",
-      subtitle: "Your 24/7 Research Assistant That Never Sleeps",
-      description: "Get instant multi-dimensional analysis combining technicals, fundamentals, news sentiment, and upcoming events—all in conversational format with customizable intelligence.",
+      title: "Co-Analyst AI",
+      subtitle: "Your Intelligent Research Partner",
+      description: "Get data-backed validation for every recommendation.",
       features: [
-        "Instant Multi-Dimensional Analysis (4 factors)",
-        "Personalized Analysis Styles (Conservative to Aggressive)",
-        "Real-Time Market Context from 50+ sources",
-        "Conviction Scoring (0-100) with reasoning",
-        "Customizable Intelligence (120+ parameters)"
-      ],
-      metrics: [
-        { label: "4-factor", desc: "analysis" },
-        { label: "50+ data", desc: "sources" },
-        { label: "85%+", desc: "accuracy" },
-        { label: "120+", desc: "parameters" }
+        "Multi-Factor Analysis (Technical + Fundamental + News + Events)",
+        "Real-time Market Context from 50+ data sources",
+        "Customizable Parameters to match your investment style",
+        "Clear Confidence Scoring with specific reasoning"
       ],
       gradient: "from-secondary/20 to-secondary/5",
       borderColor: "border-secondary/30"
@@ -71,44 +57,27 @@ export const ProductSuite = () => {
     {
       icon: Smartphone,
       title: "Native Mobile Experience",
-      subtitle: "Your Clients Deserve Better Than PDFs",
-      description: "Beautiful native iOS & Android apps with your branding. Swipe-friendly research cards, instant notifications, one-tap trading intent, and offline access.",
+      subtitle: "For Your Clients",
+      description: "Beautiful, branded mobile apps that make your research impossible to ignore.",
       features: [
-        "Native iOS & Android Apps with branding",
-        "Instant Push Notifications (smart timing)",
-        "Swipe-Friendly Research Cards",
-        "One-Tap Trading Intent tracking",
-        "Portfolio Tracking & Offline Access"
-      ],
-      metrics: [
-        { label: "99%", desc: "bundle reduction" },
-        { label: "60fps", desc: "smooth UI" },
-        { label: "Battery", desc: "optimized" },
-        { label: "Works", desc: "offline" }
+        "Dedicated iOS & Android Apps with your branding",
+        "Swipe-Friendly Research Cards designed for mobile",
+        "One-Tap Trading Intent to capture client interest",
+        "Offline Access for poor connectivity areas"
       ],
       gradient: "from-accent/20 to-accent/5",
       borderColor: "border-accent/30"
     },
     {
       icon: BarChart3,
-      title: "Advanced Analytics Dashboard",
-      subtitle: "Finally, Know What's Actually Working",
-      description: "Track analyst performance, client behavior, revenue attribution, sector performance, and market timing intelligence with real-time updates and predictive insights.",
+      title: "Advanced Analytics",
+      subtitle: "For Your Business",
+      description: "See exactly what's working and what needs improvement.",
       features: [
-        "Analyst Performance Intelligence",
-        "Client Behavior Analytics",
-        "Revenue Attribution tracking",
-        "Stock & Sector Performance analysis",
-        "Market Timing Intelligence",
-        "Strategic Decision Intelligence",
-        "Real-Time Monitoring",
-        "Executive Summary View"
-      ],
-      metrics: [
-        { label: "8 modules", desc: "analytics" },
-        { label: "Real-time", desc: "updates" },
-        { label: "Revenue", desc: "tracking" },
-        { label: "Predictive", desc: "insights" }
+        "Analyst Performance Tracking",
+        "Client Engagement Analytics",
+        "Revenue Attribution (connect calls to trading activity)",
+        "Real-time Business Intelligence"
       ],
       gradient: "from-primary/20 via-secondary/10 to-accent/10",
       borderColor: "border-primary/30"
@@ -124,15 +93,9 @@ export const ProductSuite = () => {
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Complete Product Suite</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet WISE:
-            <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Your Complete Advisory Technology Platform
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            One Platform. Complete Control.
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Four Integrated Products. One Seamless Experience. Measurable Results.
-          </p>
         </div>
 
         {/* Products */}
@@ -179,17 +142,6 @@ export const ProductSuite = () => {
                       </Button>
                     </div>
 
-                    {/* Metrics */}
-                    <div className="lg:w-80">
-                      <div className="grid grid-cols-2 gap-4">
-                        {product.metrics.map((metric, idx) => (
-                          <div key={idx} className="p-4 rounded-xl bg-card/50 backdrop-blur border border-border">
-                            <div className="text-2xl font-bold text-foreground mb-1">{metric.label}</div>
-                            <div className="text-sm text-muted-foreground">{metric.desc}</div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -197,27 +149,6 @@ export const ProductSuite = () => {
           })}
         </div>
 
-        {/* Integration Message */}
-        <div className={`mt-16 text-center max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.8s' }}>
-          <Target className="w-12 h-12 text-primary mx-auto mb-4" />
-          <h3 className="text-2xl font-bold mb-4 text-foreground">The Power is in the Integration</h3>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            WISE isn't just software—it's your complete advisory infrastructure. From research creation with AI assistance, 
-            to native mobile apps for your clients, to advanced analytics that show exactly what's working—everything works 
-            together to transform your advisory business.
-          </p>
-          <div className="flex items-center justify-center gap-3 mt-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              <span>40% Client Retention Improvement</span>
-            </div>
-            <span>•</span>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              <span>65% Research Effectiveness Increase</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

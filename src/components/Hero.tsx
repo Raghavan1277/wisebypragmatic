@@ -18,59 +18,43 @@ export const Hero = () => {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-slide-up leading-tight">
-            Transform Your Research Into
-            <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Unbreakable Client Relationships
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+            <span className="block mb-2">Stop Researching.</span>
+            <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Start Connecting.
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up leading-relaxed" style={{ animationDelay: '0.1s' }}>
-            The complete advisory platform that turns every recommendation into measurable business intelligence. 
-            Research control center + AI co-analyst + advanced analytics + native mobile—all working together to grow your revenue and delight your clients.
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            The all-in-one platform that turns your stock recommendations into unbreakable client relationships.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <Button size="lg" className="min-w-[200px] h-12 text-base">
-              Watch Platform Demo
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
+              See Platform Demo
             </Button>
-            <Button size="lg" variant="secondary" className="min-w-[200px] h-12 text-base">
-              Start Free Trial
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
+              Explore Features
             </Button>
-            <Button size="lg" variant="outline" className="min-w-[200px] h-12 text-base">
-              Calculate Your ROI
-            </Button>
-          </div>
-
-          {/* Value Props */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
-            {[
-              { icon: "🎯", value: "78%", label: "Better call success rates", desc: "through behavioral optimization" },
-              { icon: "📈", value: "65%", label: "AUM growth", desc: "with deeper client understanding" },
-              { icon: "💰", value: "₹2.8Cr", label: "Additional revenue", desc: "for medium firms" },
-              { icon: "📱", value: "99%", label: "Mobile performance", desc: "native app experience" },
-            ].map((stat, index) => (
-              <div key={index} className="p-5 rounded-xl bg-card border border-border hover:border-primary/50 transition-all hover:shadow-lg">
-                <div className="text-4xl mb-3">{stat.icon}</div>
-                <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-sm font-medium text-foreground mb-1">{stat.label}</div>
-                <div className="text-xs text-muted-foreground">{stat.desc}</div>
-              </div>
-            ))}
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-muted-foreground animate-slide-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <span>✓</span> 1M+ research calls distributed
+              <span>✓</span>
+              <span>Trusted by SEBI Registered Research Analysts</span>
             </div>
+            <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
-              <span>✓</span> 99.9% uptime SLA
+              <span>✓</span>
+              <span>Built for the Indian Financial Market</span>
             </div>
+            <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
-              <span>✓</span> SEBI compliant by design
+              <span>✓</span>
+              <span>Real-time NSE/BSE Data Integration</span>
             </div>
           </div>
         </div>

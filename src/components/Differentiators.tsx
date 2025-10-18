@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Network, Smartphone, Brain, LineChart, MapPin, Target } from "lucide-react";
+import { Brain, Smartphone, Target, Network, MapPin } from "lucide-react";
 
 export const Differentiators = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,44 +28,22 @@ export const Differentiators = () => {
     {
       icon: Network,
       title: "Integration Over Fragmentation",
-      others: "Separate tools for research, mobile, analytics—data silos, no insights",
-      wise: "Four products purpose-built to work together, data flows seamlessly, insights compound",
-      color: "from-primary/20 to-primary/5"
+      description: "Four products built to work together, not four separate tools patched together."
+    },
+    {
+      icon: MapPin,
+      title: "Built for India",
+      description: "SEBI-compliant workflows, NSE/BSE real-time data, and understanding of local market nuances."
     },
     {
       icon: Smartphone,
       title: "Mobile-First Experience",
-      others: "PDF emails or responsive website (clunky on phone)",
-      wise: "Native iOS/Android apps + PWA with 99% bundle optimization—Instagram-smooth experience",
-      color: "from-secondary/20 to-secondary/5"
+      description: "Native apps that work beautifully, even on slower Indian mobile networks."
     },
     {
       icon: Brain,
       title: "AI That Actually Helps",
-      others: "Generic AI suggestions or expensive enterprise AI requiring technical integration",
-      wise: "Customizable AI Co-Analyst that learns your investment style with 120+ tunable parameters",
-      color: "from-accent/20 to-accent/5"
-    },
-    {
-      icon: LineChart,
-      title: "Analytics That Drive Action",
-      others: "Basic dashboards showing what happened (descriptive)",
-      wise: "Predictive insights showing what to do next: which sectors to focus on, when to publish, who needs attention",
-      color: "from-primary/20 to-primary/5"
-    },
-    {
-      icon: MapPin,
-      title: "Built for Indian Market",
-      others: "Global products poorly adapted to Indian workflows and compliance",
-      wise: "SEBI compliance automation, NSE/BSE real-time integration, Hindi language support, WhatsApp distribution",
-      color: "from-secondary/20 to-secondary/5"
-    },
-    {
-      icon: Target,
-      title: "Proven ROI, Not Just Features",
-      others: "Sell features and hope for results",
-      wise: "90-day improvement guarantee or full refund—we're invested in your success",
-      color: "from-accent/20 to-accent/5"
+      description: "Co-Analyst enhances your expertise, doesn't replace your judgment."
     }
   ];
 
@@ -74,47 +52,26 @@ export const Differentiators = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Not Just Another Research Tool—
-            <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              A Complete Advisory Transformation Platform
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            Why Choose WISE
           </h2>
-          <p className="text-lg text-muted-foreground">
-            See why forward-thinking advisory firms choose WISE over fragmented solutions
-          </p>
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {differentiators.map((diff, index) => {
             const Icon = diff.icon;
             return (
               <div
                 key={index}
-                className={`p-8 rounded-2xl bg-gradient-to-br ${diff.color} border border-border hover:border-primary/50 transition-all duration-700 hover:shadow-xl ${
+                className={`p-8 rounded-2xl bg-card border border-border hover:shadow-xl transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground pt-2">{diff.title}</h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl bg-destructive/5 border border-destructive/20">
-                    <div className="text-xs font-semibold text-destructive mb-2">❌ Others</div>
-                    <p className="text-sm text-muted-foreground">{diff.others}</p>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
-                    <div className="text-xs font-semibold text-primary mb-2">✅ WISE</div>
-                    <p className="text-sm text-foreground font-medium">{diff.wise}</p>
-                  </div>
-                </div>
+                <Icon className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-3 text-foreground">{diff.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{diff.description}</p>
               </div>
             );
           })}

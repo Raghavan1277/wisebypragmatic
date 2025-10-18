@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TrendingDown, Target, Clock, FileCheck, Rocket } from "lucide-react";
+import { AlertCircle, Users, Clock, Shield } from "lucide-react";
 
 export const ProblemStatement = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,39 +26,28 @@ export const ProblemStatement = () => {
 
   const problems = [
     {
-      icon: TrendingDown,
-      title: "Lost in Translation",
-      description: "70% of your recommendations are ignored because clients don't understand the context or timing",
-      impact: "₹1-2 crore annual loss per analyst due to poor communication",
-      color: "text-destructive"
+      icon: AlertCircle,
+      title: "Fragmented Workflow",
+      description: "You're juggling multiple apps for analysis, writing, and distribution. Your process is patched together with WhatsApp, Excel, and email.",
+      color: "from-red-500/20 to-red-500/5"
     },
     {
-      icon: Target,
-      title: "Flying Blind",
-      description: "Zero visibility into which clients actually trade on your calls or why they ignore others",
-      impact: "Unable to improve what you can't measure",
-      color: "text-secondary"
+      icon: Users,
+      title: "Missing Client Insights",
+      description: "You have no visibility into which clients actually read your research or why they ignore your best calls.",
+      color: "from-orange-500/20 to-orange-500/5"
     },
     {
       icon: Clock,
-      title: "Manual Chaos",
-      description: "4+ hours daily wasted on Excel coordination, email chains, and version control",
-      impact: "Time that should be spent building relationships",
-      color: "text-accent"
+      title: "Manual Distribution Headaches",
+      description: "Hours wasted on copying, pasting, and sending research across different channels instead of analyzing markets.",
+      color: "from-yellow-500/20 to-yellow-500/5"
     },
     {
-      icon: FileCheck,
-      title: "Compliance Nightmare",
-      description: "₹50,000+ monthly on manual SEBI compliance and constant audit anxiety",
-      impact: "Regulatory risk and operational overhead",
-      color: "text-primary"
-    },
-    {
-      icon: Rocket,
-      title: "Competitor Advantage",
-      description: "Competitors with worse analysis are winning your clients through better communication",
-      impact: "Market share erosion to relationship-focused firms",
-      color: "text-destructive"
+      icon: Shield,
+      title: "Compliance Anxiety",
+      description: "Constantly worrying about SEBI audit trails and manual compliance reporting.",
+      color: "from-blue-500/20 to-blue-500/5"
     }
   ];
 
@@ -67,51 +56,29 @@ export const ProblemStatement = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Is Your Brilliant Research Falling Into a{" "}
-            <span className="bg-gradient-to-r from-destructive to-destructive/60 bg-clip-text text-transparent">
-              Communication Black Hole?
-            </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+            Is Your Brilliant Research Getting Lost in Translation?
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Even the best research fails without proper distribution, tracking, and client engagement
-          </p>
         </div>
 
-        {/* Problem Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
+        {/* Problems Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             return (
               <div
                 key={index}
-                className={`p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-700 hover:shadow-xl ${
+                className={`p-8 rounded-2xl bg-gradient-to-br ${problem.color} border border-border hover:shadow-xl transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${0.2 + index * 0.1}s` }}
               >
-                <div className={`w-14 h-14 rounded-xl bg-muted/50 flex items-center justify-center mb-4 ${problem.color}`}>
-                  <Icon className="w-7 h-7" />
-                </div>
+                <Icon className="w-12 h-12 text-primary mb-4" />
                 <h3 className="text-xl font-bold mb-3 text-foreground">{problem.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{problem.description}</p>
-                <div className="pt-4 border-t border-border">
-                  <p className="text-sm font-medium text-destructive">
-                    Impact: {problem.impact}
-                  </p>
-                </div>
+                <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
               </div>
             );
           })}
-        </div>
-
-        {/* Transition Statement */}
-        <div className={`text-center max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border border-primary/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.6s' }}>
-          <p className="text-lg md:text-xl font-medium text-foreground leading-relaxed">
-            <span className="font-bold">The Hidden Cost:</span> While you're perfecting your analysis, 
-            competitors who prioritize client experience are building unbreakable relationships. 
-            <span className="text-primary font-bold"> The firms that solve this first will dominate their markets.</span>
-          </p>
         </div>
       </div>
     </section>
