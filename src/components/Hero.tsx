@@ -12,16 +12,11 @@ export const Hero = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 animate-fade-in">
-            <span className="text-sm font-medium text-primary">Trusted by 50+ advisory firms across India</span>
-          </div>
-
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            <span className="block mb-2">Stop Researching.</span>
+            <span className="block mb-2">Stop Guessing.</span>
             <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Start Connecting.
+              Start Knowing.
             </span>
           </h1>
 
@@ -54,7 +49,7 @@ export const Hero = () => {
             <span className="hidden sm:inline">•</span>
             <div className="flex items-center gap-2">
               <span>✓</span>
-              <span>Real-time NSE/BSE Data Integration</span>
+              <span>Real-time exchange Data Integration</span>
             </div>
           </div>
         </div>
