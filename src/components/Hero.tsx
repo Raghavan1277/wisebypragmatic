@@ -1,16 +1,10 @@
 import { Button } from "./ui/button";
 import bannerBg from "@/assets/banner_BG.jpg";
-
 export const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
-          src={bannerBg} 
-          alt="Financial analytics dashboard background" 
-          className="w-full h-full object-cover"
-        />
+        <img src={bannerBg} alt="Financial analytics dashboard background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
       </div>
 
@@ -30,7 +24,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-20">
             <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
               See Platform Demo
             </Button>
@@ -65,6 +59,5 @@ export const Hero = () => {
           <div className="w-1.5 h-3 bg-muted-foreground/30 rounded-full" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
