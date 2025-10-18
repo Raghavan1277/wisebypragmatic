@@ -165,8 +165,8 @@ export const AnalystPerformance = () => {
                   tick={{ fontSize: 12, fill: 'hsl(var(--muted-foreground))' }}
                   label={{ value: 'Sharpe Ratio', angle: 90, position: 'insideRight', style: { fontSize: 12 } }}
                 />
-                <Bar yAxisId="left" dataKey="return" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} />
-                <Bar yAxisId="right" dataKey="sharpe" fill="hsl(var(--chart-2))" radius={[8, 8, 0, 0]} />
+                <Bar yAxisId="left" dataKey="return" fill="hsl(25, 95%, 53%)" radius={[8, 8, 0, 0]} />
+                <Bar yAxisId="right" dataKey="sharpe" fill="hsl(271, 91%, 65%)" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
