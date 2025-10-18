@@ -157,7 +157,7 @@ export const ProductSuite = () => {
                       {product.image ? (
                         product.title === "Native Mobile Experience" || product.title === "Co-Analyst AI" ? (
                           <div
-                            className="absolute inset-0 bg-center bg-cover"
+                            className="absolute inset-0 bg-top bg-cover"
                             style={{ backgroundImage: `url(${product.image})` }}
                             aria-hidden="true"
                           />
