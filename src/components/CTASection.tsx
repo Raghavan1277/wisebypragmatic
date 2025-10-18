@@ -1,6 +1,6 @@
-import { Calendar, MessageSquare, TrendingUp, Mail, Phone } from "lucide-react";
-import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import { Calendar, Mail, Phone, Target, Users, MessageSquare } from "lucide-react";
+import { Button } from "./ui/button";
 
 export const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,75 +22,109 @@ export const CTASection = () => {
   }, []);
 
   const demoAgenda = [
-    { icon: TrendingUp, title: "User Engagement Dashboard", desc: "Walkthrough of engagement metrics and churn risk alerts" },
-    { icon: BarChart3, title: "Analyst Performance Metrics", desc: "Deep dive into performance analytics and success rates" },
-    { icon: Calendar, title: "Executive Summary", desc: "Review of leadership insights and strategic metrics" },
-    { icon: MessageSquare, title: "Technical Q&A", desc: "Questions answered by our technical team" }
+    { icon: Target, title: "Your Workflow", description: "See how WISE fits your specific use case" },
+    { icon: Users, title: "Live Analytics", description: "Real numbers from actual advisory firms" },
+    { icon: MessageSquare, title: "Q&A Session", description: "Ask anything about features, pricing, or implementation" },
   ];
 
   return (
-    <section id="cta" className="py-24 px-4 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
-      
-      <div className="container mx-auto relative z-10">
+    <section id="cta" className="py-24 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Let Us Show You
-            <br />
-            <span className="text-gradient">What You're Missing</span>
+        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <span className="text-sm font-medium text-primary">Join 50+ forward-thinking firms already using WISE</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            Ready to Transform
+            <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Your Advisory Business?
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            The best way to understand the power of WISE is to see it working. Get a live, tailored tour of the platform focused on insights that matter most to you.
+          <p className="text-xl text-muted-foreground">
+            See exactly how WISE can grow your revenue and delight your clients with a personalized demo
           </p>
         </div>
 
         {/* Demo Agenda Grid */}
-        <div className={`grid md:grid-cols-2 gap-6 mb-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-          {demoAgenda.map((item, index) => (
-            <div key={index} className="glass p-6 rounded-2xl hover:scale-105 transition-transform duration-300">
-              <item.icon className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
+        <div className={`grid md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
+          {demoAgenda.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all hover:shadow-lg">
+                <Icon className="h-8 w-8 text-primary mb-4" />
+                <h3 className="text-xl font-bold mb-2 text-foreground">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
+            );
+          })}
         </div>
 
         {/* CTA Card */}
-        <div className={`glass p-12 rounded-3xl text-center max-w-4xl mx-auto ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <h3 className="text-3xl font-bold mb-6">Ready to Transform Your Research?</h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading Indian broking firms who have already transformed their research operations with WISE Platform
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-glow transition-all duration-300"
-            >
-              <Calendar className="mr-2 h-5 w-5" />
-              Schedule Live Demo
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-lg rounded-xl border-border/50 hover:border-primary/50 transition-all duration-300"
-            >
-              <MessageSquare className="mr-2 h-5 w-5" />
-              Contact Sales
-            </Button>
-          </div>
+        <div className={`max-w-5xl mx-auto p-10 rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border-2 border-primary/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.5s' }}>
+          <div className="text-center space-y-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
+              Experience WISE in Action
+            </h3>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Choose the best way to get started with WISE Platform
+            </p>
+            
+            {/* Multiple CTA Options */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+                <div className="text-3xl mb-3">🎯</div>
+                <h4 className="font-semibold text-foreground mb-2">Start Free Trial</h4>
+                <p className="text-sm text-muted-foreground mb-4">Full platform access for 30 days. No credit card required.</p>
+                <Button className="w-full">Start Trial</Button>
+              </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground border-t border-border/50 pt-8">
-            <a href="mailto:hello@pragmaticdigital.in" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail className="h-4 w-4" />
-              hello@pragmaticdigital.in
-            </a>
-            <div className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>+91 99400 23340 / +91 99403 13333</span>
+              <div className="p-6 rounded-xl bg-card border-2 border-primary/50 hover:border-primary transition-all">
+                <div className="text-3xl mb-3">📅</div>
+                <h4 className="font-semibold text-foreground mb-2">Schedule Live Demo</h4>
+                <p className="text-sm text-muted-foreground mb-4">30-minute personalized walkthrough with our team.</p>
+                <Button variant="default" className="w-full">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Pick Your Time
+                </Button>
+              </div>
+
+              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all">
+                <div className="text-3xl mb-3">💰</div>
+                <h4 className="font-semibold text-foreground mb-2">Calculate ROI</h4>
+                <p className="text-sm text-muted-foreground mb-4">See your exact savings and revenue potential.</p>
+                <Button variant="outline" className="w-full">Try Calculator</Button>
+              </div>
+            </div>
+
+            {/* Contact Info */}
+            <div className="pt-8 border-t border-border mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <Phone className="h-4 w-4 text-primary" />
+                <span>+91-98765-43210</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <Mail className="h-4 w-4 text-primary" />
+                <span>hello@wiseplatform.in</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <MessageSquare className="h-4 w-4 text-primary" />
+                <span>WhatsApp Support</span>
+              </div>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-6 pt-6 text-xs text-muted-foreground">
+              <div>✓ 99.9% uptime SLA</div>
+              <div>✓ SEBI compliant</div>
+              <div>✓ ISO 27001 certified</div>
+              <div>✓ 90-day money-back guarantee</div>
             </div>
           </div>
         </div>
@@ -103,12 +137,3 @@ export const CTASection = () => {
     </section>
   );
 };
-
-const BarChart3 = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 3v18h18" />
-    <path d="M18 17V9" />
-    <path d="M13 17V5" />
-    <path d="M8 17v-3" />
-  </svg>
-);
