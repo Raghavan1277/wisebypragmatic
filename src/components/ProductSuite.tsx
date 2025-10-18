@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
 import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
 import mobileAppVisual from "@/assets/mobile-app-visual.jpg";
+import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -88,7 +89,8 @@ export const ProductSuite = () => {
         "Real-time business intelligence"
       ],
       gradient: "from-primary/20 via-secondary/10 to-accent/10",
-      borderColor: "border-primary/30"
+      borderColor: "border-primary/30",
+      image: analyticsDashboard
     }
   ];
 
