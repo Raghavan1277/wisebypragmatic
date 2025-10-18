@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
+import researchDashboard from "@/assets/research-control-dashboard.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,7 +39,8 @@ export const ProductSuite = () => {
         "Call lifecycle management (carry-forward, exit, book profit)"
       ],
       gradient: "from-primary/20 to-primary/5",
-      borderColor: "border-primary/30"
+      borderColor: "border-primary/30",
+      image: researchDashboard
     },
     {
       icon: Brain,
@@ -146,15 +148,25 @@ export const ProductSuite = () => {
 
                     {/* Image/Visual Column */}
                     <div className={`relative min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${product.gradient} flex items-center justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
-                      <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                        <Icon className="w-64 h-64 text-foreground" />
-                      </div>
-                      <div className="relative z-10 text-center p-8">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
-                          <Target className="w-4 h-4 text-primary" />
-                          <span className="text-sm font-medium">Visual Coming Soon</span>
-                        </div>
-                      </div>
+                      {product.image ? (
+                        <img 
+                          src={product.image} 
+                          alt={`${product.title} dashboard interface`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                            <Icon className="w-64 h-64 text-foreground" />
+                          </div>
+                          <div className="relative z-10 text-center p-8">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
+                              <Target className="w-4 h-4 text-primary" />
+                              <span className="text-sm font-medium">Visual Coming Soon</span>
+                            </div>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
