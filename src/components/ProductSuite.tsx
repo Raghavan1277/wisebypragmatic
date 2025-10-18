@@ -125,7 +125,7 @@ export const ProductSuite = () => {
                 <div className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden`}>
                   <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
                     {/* Text Content Column */}
-                    <div className={`${product.title === "Co-Analyst AI" ? "p-6 lg:p-8" : product.title === "Native Mobile Experience" ? "p-6 lg:p-8 h-[200px]" : "p-8 lg:p-12"} flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
+                    <div className={`${product.title === "Co-Analyst AI" ? "p-6 lg:p-8" : "p-8 lg:p-12"} flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
                       <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center mb-6`}>
                         <Icon className="w-8 h-8 text-foreground" />
                       </div>
