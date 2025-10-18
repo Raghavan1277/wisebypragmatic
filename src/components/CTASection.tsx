@@ -51,7 +51,7 @@ export const CTASection = () => {
             </div>
             
             <p className="text-sm text-muted-foreground">
-              5-minute guided tour or personalized walkthrough
+              20-minute guided tour or personalised walkthrough
             </p>
 
             {/* Contact Info */}
