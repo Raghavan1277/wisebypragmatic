@@ -3,7 +3,7 @@ import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, Trending
 import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
 import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
-import mobileAppVisual from "@/assets/mobile-app-visual.png";
+import mobileAppVisual from "@/assets/wise_ios_dashboard1.png";
 import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 export const ProductSuite = () => {
