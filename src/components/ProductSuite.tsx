@@ -155,9 +155,15 @@ export const ProductSuite = () => {
                     {/* Image/Visual Column */}
                     <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {product.image ? (
-                        product.title === "Native Mobile Experience" || product.title === "Co-Analyst AI" ? (
+                        product.title === "Native Mobile Experience" ? (
                           <div
                             className="absolute inset-0 bg-center bg-cover"
+                            style={{ backgroundImage: `url(${product.image})` }}
+                            aria-hidden="true"
+                          />
+                        ) : product.title === "Co-Analyst AI" ? (
+                          <div
+                            className="absolute inset-0 bg-center bg-contain bg-no-repeat"
                             style={{ backgroundImage: `url(${product.image})` }}
                             aria-hidden="true"
                           />
