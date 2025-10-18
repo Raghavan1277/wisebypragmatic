@@ -87,9 +87,6 @@ export const HowItWorks = () => {
                   }`}
                   style={{ transitionDelay: `${index * 0.1}s` }}
                 >
-                  <div className={`absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center font-bold text-lg text-white shadow-lg`}>
-                    {index + 1}
-                  </div>
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>

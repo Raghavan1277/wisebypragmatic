@@ -90,11 +90,6 @@ export const IntelligentWorkflow = () => {
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>
-
-                {/* Step number */}
-                <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gradient-to-br ${step.color} text-white flex items-center justify-center text-sm font-bold shadow-lg`}>
-                  {index + 1}
-                </div>
               </div>
 
               {/* Connector arrow (desktop only) */}

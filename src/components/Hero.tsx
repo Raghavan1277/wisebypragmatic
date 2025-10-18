@@ -4,21 +4,31 @@ import heroBackground from "@/assets/hero-background.jpg";
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Animation */}
+      {/* Background Image with Parallax Animation */}
       <div className="absolute inset-0 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center animate-[scale-in_20s_ease-in-out_infinite_alternate]"
           style={{ 
             backgroundImage: `url(${heroBackground})`,
-            transform: 'scale(1.1)'
+            transform: 'scale(1.15)'
           }}
         />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
-        {/* Animated accent elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+        {/* Lighter Gradient Overlay for better visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/80" />
+        
+        {/* Animated galaxy particles with parallax effect */}
+        <div className="absolute top-10 left-[10%] w-2 h-2 bg-primary rounded-full animate-[float_6s_ease-in-out_infinite]" />
+        <div className="absolute top-[20%] left-[80%] w-1 h-1 bg-secondary rounded-full animate-[float_8s_ease-in-out_infinite]" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-[40%] left-[15%] w-1.5 h-1.5 bg-accent rounded-full animate-[float_7s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[60%] left-[75%] w-1 h-1 bg-primary rounded-full animate-[float_9s_ease-in-out_infinite]" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-[80%] left-[20%] w-2 h-2 bg-secondary rounded-full animate-[float_5s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-[30%] left-[90%] w-1 h-1 bg-accent rounded-full animate-[float_10s_ease-in-out_infinite]" style={{ animationDelay: '5s' }} />
+        
+        {/* Animated accent waves with parallax */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-[float_15s_ease-in-out_infinite]" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-[float_18s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/15 rounded-full blur-3xl animate-[float_20s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-[70%] left-[30%] w-64 h-64 bg-primary/15 rounded-full blur-3xl animate-[float_16s_ease-in-out_infinite]" style={{ animationDelay: '6s' }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
