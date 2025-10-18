@@ -156,10 +156,11 @@ export const ProductSuite = () => {
                     <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {product.image ? (
                         <div
-                          className={`absolute inset-0 bg-cover ${
-                            product.title === "Research Control Center" ? "bg-left-top" :
-                            product.title === "Advanced Analytics" ? "bg-left-top" :
-                            "bg-top"
+                          className={`absolute inset-0 ${
+                            product.title === "Native Mobile Experience" ? "bg-contain bg-center bg-no-repeat" :
+                            product.title === "Research Control Center" ? "bg-cover bg-left-top" :
+                            product.title === "Advanced Analytics" ? "bg-cover bg-left-top" :
+                            "bg-cover bg-top"
                           }`}
                           style={{ backgroundImage: `url(${product.image})` }}
                           aria-hidden="true"
