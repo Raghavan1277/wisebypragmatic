@@ -153,7 +153,7 @@ export const ProductSuite = () => {
                     </div>
 
                     {/* Image/Visual Column */}
-                    <div className={`relative min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[250px] lg:min-h-[300px]" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {product.image ? (
                         <img 
                           src={product.image} 
@@ -161,7 +161,7 @@ export const ProductSuite = () => {
                           className="w-full h-full object-cover"
                           style={
                             product.title === "Co-Analyst AI" 
-                              ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d" }
+                              ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d", height: "50%", objectFit: "contain" }
                               : product.title === "Native Mobile Experience"
                               ? { height: "60%", objectFit: "contain", objectPosition: "center" }
                               : undefined
