@@ -30,7 +30,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
               See Platform Demo
             </Button>
