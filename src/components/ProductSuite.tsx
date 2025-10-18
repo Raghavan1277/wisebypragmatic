@@ -163,7 +163,7 @@ export const ProductSuite = () => {
                             product.title === "Co-Analyst AI" 
                               ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d", objectFit: "cover", objectPosition: "left center" }
                               : product.title === "Native Mobile Experience"
-                              ? { height: "100%", width: "auto", objectFit: "contain", objectPosition: "center" }
+                              ? { height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }
                               : undefined
                           }
                         />
