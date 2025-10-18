@@ -3,6 +3,7 @@ import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, Trending
 import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
 import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
+import mobileAppVisual from "@/assets/mobile-app-visual.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,7 +73,8 @@ export const ProductSuite = () => {
         "Lightweight SDKs to integrate with your existing web and mobile apps"
       ],
       gradient: "from-accent/20 to-accent/5",
-      borderColor: "border-accent/30"
+      borderColor: "border-accent/30",
+      image: mobileAppVisual
     },
     {
       icon: BarChart3,
