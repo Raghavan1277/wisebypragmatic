@@ -159,7 +159,13 @@ export const ProductSuite = () => {
                           src={product.image} 
                           alt={`${product.title} dashboard interface`}
                           className="w-full h-full object-cover"
-                          style={product.title === "Co-Analyst AI" ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d" } : undefined}
+                          style={
+                            product.title === "Co-Analyst AI" 
+                              ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d" }
+                              : product.title === "Native Mobile Experience"
+                              ? { height: "60%", objectFit: "contain", objectPosition: "center" }
+                              : undefined
+                          }
                         />
                       ) : (
                         <>
