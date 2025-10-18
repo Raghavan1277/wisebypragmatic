@@ -69,9 +69,6 @@ export const CTASection = () => {
         {/* CTA Card */}
         <div className={`max-w-5xl mx-auto p-10 rounded-3xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border-2 border-primary/20 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.5s' }}>
           <div className="text-center space-y-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-foreground">
-              Experience WISE in Action
-            </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Choose the best way to get started with WISE Platform
             </p>

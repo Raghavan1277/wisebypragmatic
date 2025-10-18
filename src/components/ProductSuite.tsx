@@ -125,9 +125,9 @@ export const ProductSuite = () => {
             <span className="text-sm font-medium text-primary">Complete Product Suite</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet WISE: Your Complete
+            Meet WISE:
             <span className="block mt-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Advisory Technology Platform
+              Your Complete Advisory Technology Platform
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
