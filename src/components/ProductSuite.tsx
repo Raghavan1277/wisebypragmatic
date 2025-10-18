@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
-import researchDashboard from "@/assets/research-control-dashboard.jpg";
+import researchDashboard from "@/assets/research-control-collage.png";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
