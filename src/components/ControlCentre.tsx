@@ -1,5 +1,6 @@
 import { DollarSign, TrendingUp, CheckCircle, FileText } from "lucide-react";
 import { useEffect, useState } from "react";
+import wiseDashboard from "@/assets/wise_dashboard.jpg";
 
 export const ControlCentre = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,8 +36,8 @@ export const ControlCentre = () => {
   ];
 
   return (
-    <section id="control-centre" className="py-24 px-4 relative overflow-hidden">
-      <div className="container mx-auto">
+    <section id="control-centre" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -49,64 +50,81 @@ export const ControlCentre = () => {
           </p>
         </div>
 
-        {/* KPI Dashboard */}
-        <div className={`glass p-8 rounded-3xl mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-          <h3 className="text-2xl font-bold mb-8">Real-Time Business Health</h3>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {kpis.map((kpi, index) => (
-              <div key={index} className="bg-background/50 p-6 rounded-xl border border-border/50 hover:border-primary/50 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    <kpi.icon className={`h-6 w-6 ${kpi.color}`} />
+        {/* Full Width Card with Dashboard Image and Content */}
+        <div className={`glass p-8 rounded-3xl ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Left Side - Dashboard Image */}
+            <div className="rounded-xl overflow-hidden">
+              <img 
+                src={wiseDashboard} 
+                alt="Research analytics dashboard showing active calls, P&L tracking, and published recommendations" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Right Side - Content */}
+            <div className="space-y-8">
+              {/* KPI Dashboard */}
+              <div>
+                <h3 className="text-2xl font-bold mb-6">Real-Time Business Health</h3>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  {kpis.map((kpi, index) => (
+                    <div key={index} className="bg-background/50 p-4 rounded-xl border border-border/50 hover:border-primary/50 transition-all duration-300">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="p-2 bg-primary/10 rounded-lg">
+                          <kpi.icon className={`h-5 w-5 ${kpi.color}`} />
+                        </div>
+                      </div>
+                      <div className={`text-2xl font-bold mb-1 ${kpi.color}`}>{kpi.value}</div>
+                      <div className="text-xs text-muted-foreground">{kpi.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Recent Calls Table */}
+              <div>
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                  <h3 className="text-2xl font-bold">Published Calls</h3>
+                  <div className="flex gap-2 text-sm">
+                    <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Published: 35</span>
+                    <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full">Pending: 3</span>
                   </div>
                 </div>
-                <div className={`text-3xl font-bold mb-2 ${kpi.color}`}>{kpi.value}</div>
-                <div className="text-sm text-muted-foreground">{kpi.label}</div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left py-3 px-3 text-xs font-semibold text-muted-foreground">Symbol</th>
+                        <th className="text-left py-3 px-3 text-xs font-semibold text-muted-foreground">Call Type</th>
+                        <th className="text-left py-3 px-3 text-xs font-semibold text-muted-foreground">Change</th>
+                        <th className="text-left py-3 px-3 text-xs font-semibold text-muted-foreground">Published</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {recentCalls.map((call, index) => (
+                        <tr key={index} className="border-b border-border/50 hover:bg-background/50 transition-colors">
+                          <td className="py-3 px-3">
+                            <span className="font-mono font-semibold text-foreground text-sm">{call.symbol}</span>
+                          </td>
+                          <td className="py-3 px-3">
+                            <span className="text-muted-foreground text-sm">{call.type}</span>
+                          </td>
+                          <td className="py-3 px-3">
+                            <span className="text-primary font-semibold text-sm">{call.change}</span>
+                          </td>
+                          <td className="py-3 px-3">
+                            <span className="text-xs text-muted-foreground">{call.date}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Recent Calls Table */}
-        <div className={`glass p-8 rounded-3xl ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-            <h3 className="text-2xl font-bold">Published Calls</h3>
-            <div className="flex gap-2 text-sm">
-              <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">Published: 35</span>
-              <span className="px-3 py-1 bg-secondary/10 text-secondary rounded-full">Pending: 3</span>
             </div>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-4 px-4 text-sm font-semibold text-muted-foreground">Symbol</th>
-                  <th className="text-left py-4 px-4 text-sm font-semibold text-muted-foreground">Call Type</th>
-                  <th className="text-left py-4 px-4 text-sm font-semibold text-muted-foreground">Change</th>
-                  <th className="text-left py-4 px-4 text-sm font-semibold text-muted-foreground">Published</th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentCalls.map((call, index) => (
-                  <tr key={index} className="border-b border-border/50 hover:bg-background/50 transition-colors">
-                    <td className="py-4 px-4">
-                      <span className="font-mono font-semibold text-foreground">{call.symbol}</span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <span className="text-muted-foreground">{call.type}</span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <span className="text-primary font-semibold">{call.change}</span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <span className="text-sm text-muted-foreground">{call.date}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
