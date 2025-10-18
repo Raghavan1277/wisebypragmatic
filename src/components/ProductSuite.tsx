@@ -100,10 +100,11 @@ export const ProductSuite = () => {
           </h2>
         </div>
 
-        {/* Products */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        {/* Products - Full Width Cards */}
+        <div className="space-y-8 max-w-7xl mx-auto">
           {products.map((product, index) => {
             const Icon = product.icon;
+            const isEven = index % 2 === 0;
             
             return (
               <div
@@ -113,32 +114,48 @@ export const ProductSuite = () => {
                 }`}
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
-                <div className={`h-full p-8 rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all`}>
-                  <div className="flex flex-col gap-6">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center`}>
-                      <Icon className="w-8 h-8 text-foreground" />
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2 text-foreground">{product.title}</h3>
-                      <p className="text-primary font-medium mb-4">{product.subtitle}</p>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{product.description}</p>
-                    </div>
+                <div className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden`}>
+                  <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
+                    {/* Text Content Column */}
+                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
+                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center mb-6`}>
+                        <Icon className="w-8 h-8 text-foreground" />
+                      </div>
+                      
+                      <div className="mb-6">
+                        <h3 className="text-2xl lg:text-3xl font-bold mb-2 text-foreground">{product.title}</h3>
+                        <p className="text-primary font-medium mb-4">{product.subtitle}</p>
+                        <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+                      </div>
 
-                    <div className="space-y-3">
-                      {product.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Zap className="w-3 h-3 text-primary" />
+                      <div className="space-y-3 mb-6">
+                        {product.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <Zap className="w-3 h-3 text-primary" />
+                            </div>
+                            <span className="text-sm text-foreground">{feature}</span>
                           </div>
-                          <span className="text-sm text-foreground">{feature}</span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
+
+                      <Button variant="outline" className="w-fit">
+                        Learn more
+                      </Button>
                     </div>
 
-                    <Button variant="outline" className="mt-auto">
-                      Learn more
-                    </Button>
+                    {/* Image/Visual Column */}
+                    <div className={`relative min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${product.gradient} flex items-center justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                        <Icon className="w-64 h-64 text-foreground" />
+                      </div>
+                      <div className="relative z-10 text-center p-8">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
+                          <Target className="w-4 h-4 text-primary" />
+                          <span className="text-sm font-medium">Visual Coming Soon</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
