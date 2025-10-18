@@ -32,7 +32,7 @@ export const Differentiators = () => {
     },
     {
       icon: MapPin,
-      title: "Built for India",
+      title: "Built for Bharat",
       description: "SEBI-compliant workflows, NSE/BSE real-time data, and understanding of local market nuances."
     },
     {

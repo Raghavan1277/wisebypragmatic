@@ -42,9 +42,11 @@ export const CTASection = () => {
                 <Video className="mr-2 h-5 w-5" />
                 See Platform Demo
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-                <Phone className="mr-2 h-5 w-5" />
-                Contact Our Team
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
+                <a href="mailto:hello@pragmaticdigital.in">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Contact Our Team
+                </a>
               </Button>
             </div>
             
@@ -54,7 +56,7 @@ export const CTASection = () => {
 
             {/* Contact Info */}
             <div className="pt-8 border-t border-border">
-              <p className="text-sm text-muted-foreground mb-2">Email: hello@wiseplatform.in</p>
+              <p className="text-sm text-muted-foreground mb-2">Email: hello@pragmaticdigital.in</p>
             </div>
           </div>
         </div>
