@@ -157,7 +157,7 @@ export const ProductSuite = () => {
                       {product.image ? (
                         <div
                           className={`absolute inset-0 bg-cover ${
-                            product.title === "Research Control Center" ? "bg-right-top" :
+                            product.title === "Research Control Center" ? "bg-left-top" :
                             product.title === "Advanced Analytics" ? "bg-left-top" :
                             "bg-top"
                           }`}
