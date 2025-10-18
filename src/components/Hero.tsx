@@ -1,17 +1,17 @@
 import { Button } from "./ui/button";
 import bannerBg from "@/assets/banner_BG.jpg";
 export const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative flex items-start pt-32 pb-8 justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img src={bannerBg} alt="Financial analytics dashboard background" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/40" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
+        <div className="max-w-5xl mx-auto text-center">
           {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 drop-shadow-2xl">
             <span className="block mb-2 text-white">Stop Guessing.</span>
             <span className="block text-white drop-shadow-lg">
               Start Knowing.
@@ -24,7 +24,7 @@ export const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-20">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16">
             <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
               See Platform Demo
             </Button>
@@ -34,7 +34,7 @@ export const Hero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-white">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-white mt-8">
             <div className="flex items-center gap-2">
               <span>✓</span>
               <span>Trusted by SEBI Registered Research Analysts</span>

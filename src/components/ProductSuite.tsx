@@ -95,7 +95,7 @@ export const ProductSuite = () => {
   ];
 
   return (
-    <section id="product-suite" className="py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section id="product-suite" className="py-4 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
