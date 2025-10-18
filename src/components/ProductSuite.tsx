@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, TrendingUp } from "lucide-react";
 import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
+import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,7 +55,8 @@ export const ProductSuite = () => {
         "Clear confidence scoring with specific reasoning"
       ],
       gradient: "from-secondary/20 to-secondary/5",
-      borderColor: "border-secondary/30"
+      borderColor: "border-secondary/30",
+      image: coAnalystVisual
     },
     {
       icon: Smartphone,
@@ -147,12 +149,13 @@ export const ProductSuite = () => {
                     </div>
 
                     {/* Image/Visual Column */}
-                    <div className={`relative min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${product.gradient} flex items-center justify-center ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div className={`relative min-h-[400px] lg:min-h-[500px] bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
                       {product.image ? (
                         <img 
                           src={product.image} 
                           alt={`${product.title} dashboard interface`}
                           className="w-full h-full object-cover"
+                          style={product.title === "Co-Analyst AI" ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d" } : undefined}
                         />
                       ) : (
                         <>
