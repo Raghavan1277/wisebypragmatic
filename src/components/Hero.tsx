@@ -1,33 +1,17 @@
 import { Button } from "./ui/button";
+import bannerBg from "@/assets/banner_BG.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Creative Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Animated gradient mesh background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-secondary/5 animate-[gradient_15s_ease_infinite]" 
-             style={{ 
-               backgroundSize: '400% 400%',
-               animation: 'gradient 15s ease infinite'
-             }} />
-        
-        {/* Floating geometric shapes */}
-        <div className="absolute top-[10%] left-[15%] w-32 h-32 border border-primary/20 rounded-lg rotate-45 animate-[float_20s_ease-in-out_infinite]" />
-        <div className="absolute top-[60%] right-[10%] w-24 h-24 border border-secondary/20 rounded-full animate-[float_25s_ease-in-out_infinite_reverse]" style={{ animationDelay: '3s' }} />
-        <div className="absolute bottom-[20%] left-[40%] w-20 h-20 border border-accent/20 rotate-12 animate-[float_22s_ease-in-out_infinite]" style={{ animationDelay: '6s' }} />
-        <div className="absolute top-[40%] right-[35%] w-16 h-16 border border-primary/15 rounded-lg rotate-[30deg] animate-[float_18s_ease-in-out_infinite]" style={{ animationDelay: '9s' }} />
-        
-        {/* Glowing orbs with color transitions */}
-        <div className="absolute top-[25%] right-[20%] w-64 h-64 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl animate-[float_20s_ease-in-out_infinite]" />
-        <div className="absolute bottom-[15%] left-[25%] w-80 h-80 bg-gradient-to-l from-secondary/8 to-accent/8 rounded-full blur-3xl animate-[float_28s_ease-in-out_infinite]" style={{ animationDelay: '4s' }} />
-        <div className="absolute top-[50%] left-[10%] w-56 h-56 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-3xl animate-[float_24s_ease-in-out_infinite]" style={{ animationDelay: '8s' }} />
-        
-        {/* Animated dots/particles */}
-        <div className="absolute top-[15%] left-[25%] w-2 h-2 bg-primary rounded-full animate-[pulse_3s_ease-in-out_infinite]" />
-        <div className="absolute top-[35%] right-[15%] w-1.5 h-1.5 bg-secondary rounded-full animate-[pulse_4s_ease-in-out_infinite]" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-[30%] left-[35%] w-2 h-2 bg-accent rounded-full animate-[pulse_3.5s_ease-in-out_infinite]" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-[70%] right-[40%] w-1 h-1 bg-primary rounded-full animate-[pulse_4.5s_ease-in-out_infinite]" style={{ animationDelay: '1.5s' }} />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={bannerBg} 
+          alt="Banner background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
