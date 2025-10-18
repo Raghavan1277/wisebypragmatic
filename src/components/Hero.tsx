@@ -11,7 +11,7 @@ export const Hero = () => {
           alt="Financial analytics dashboard background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
