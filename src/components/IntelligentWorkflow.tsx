@@ -1,4 +1,4 @@
-import { Zap, Send, BarChart3, Target } from "lucide-react";
+import { Sparkles, Rocket, Activity, Target } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const IntelligentWorkflow = () => {
@@ -22,32 +22,32 @@ export const IntelligentWorkflow = () => {
 
   const workflow = [
     {
-      icon: Zap,
+      icon: Sparkles,
       title: "CREATE",
       subtitle: "Analyst creates a call",
       desc: "Create any call type in one unified interface - Intraday, Positional, MTF, Basket, or Live Updates",
-      color: "from-primary to-primary/50"
+      color: "from-cyan-500 via-blue-500 to-indigo-500"
     },
     {
-      icon: Send,
+      icon: Rocket,
       title: "DISTRIBUTE & TRACK",
       subtitle: "Checker approves, WISE sends",
       desc: "Execute complex strategies instantly. Initiate Carry-Forwards, Book Profits, or Exit calls with one click",
-      color: "from-secondary to-secondary/50"
+      color: "from-violet-500 via-purple-500 to-pink-500"
     },
     {
-      icon: BarChart3,
+      icon: Activity,
       title: "ENGAGE & ANALYSE",
       subtitle: "Client engages, WISE captures",
       desc: "Monitor entire universe in real-time dashboard. Live streaming data, not yesterday's closed prices",
-      color: "from-accent to-accent/50"
+      color: "from-emerald-500 via-teal-500 to-cyan-500"
     },
     {
       icon: Target,
       title: "OPTIMISE",
       subtitle: "Insights fuel better strategy",
       desc: "AI-powered content generation with relevant commentary. Base decisions on live intelligence",
-      color: "from-primary to-accent"
+      color: "from-orange-500 via-amber-500 to-yellow-500"
     }
   ];
 
@@ -71,27 +71,28 @@ export const IntelligentWorkflow = () => {
           {workflow.map((step, index) => (
             <div key={index} className="relative">
               <div 
-                className={`glass p-6 rounded-2xl h-full hover:scale-105 transition-all duration-300 ${
+                className={`group glass p-6 rounded-2xl h-full hover:scale-105 transition-all duration-300 ${
                   isVisible ? 'animate-slide-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
                 {/* Icon with gradient background */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-6`}>
-                  <step.icon className="h-7 w-7 text-background" />
+                <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-6 shadow-xl group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300`}>
+                  <step.icon className="h-8 w-8 text-white" strokeWidth={2.5} />
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-300`}></div>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-3">
                   <div>
                     <h3 className="text-xl font-bold mb-1">{step.title}</h3>
-                    <p className="text-sm text-primary">{step.subtitle}</p>
+                    <p className="text-sm font-medium bg-gradient-to-r ${step.color} bg-clip-text text-transparent">{step.subtitle}</p>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>
 
                 {/* Step number */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-background flex items-center justify-center text-sm font-bold">
+                <div className={`absolute -top-3 -right-3 w-10 h-10 rounded-full bg-gradient-to-br ${step.color} text-white flex items-center justify-center text-sm font-bold shadow-lg`}>
                   {index + 1}
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FileEdit, ShieldCheck, Send, Smartphone, BarChart3, TrendingUp } from "lucide-react";
+import { Sparkles, ShieldCheck, Rocket, Users, LineChart, Zap } from "lucide-react";
 
 export const HowItWorks = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,34 +26,40 @@ export const HowItWorks = () => {
 
   const steps = [
     {
-      icon: FileEdit,
+      icon: Sparkles,
       title: "Create",
-      description: "Analyst drafts call with Co-Analyst validation"
+      description: "Analyst drafts call with Co-Analyst validation",
+      gradient: "from-blue-500 via-cyan-500 to-teal-500"
     },
     {
       icon: ShieldCheck,
       title: "Validate",
-      description: "AI provides multi-factor confidence score"
+      description: "AI provides multi-factor confidence score",
+      gradient: "from-violet-500 via-purple-500 to-fuchsia-500"
     },
     {
-      icon: Send,
+      icon: Rocket,
       title: "Distribute",
-      description: "One-click publishing across all channels"
+      description: "One-click publishing across all channels",
+      gradient: "from-orange-500 via-red-500 to-pink-500"
     },
     {
-      icon: Smartphone,
+      icon: Users,
       title: "Engage",
-      description: "Clients receive beautiful mobile experience"
+      description: "Clients receive beautiful mobile experience",
+      gradient: "from-emerald-500 via-green-500 to-lime-500"
     },
     {
-      icon: BarChart3,
+      icon: LineChart,
       title: "Analyze",
-      description: "Track performance and client behavior"
+      description: "Track performance and client behavior",
+      gradient: "from-indigo-500 via-blue-500 to-cyan-500"
     },
     {
-      icon: TrendingUp,
+      icon: Zap,
       title: "Improve",
-      description: "Use insights to refine your strategy"
+      description: "Use insights to refine your strategy",
+      gradient: "from-amber-500 via-yellow-500 to-orange-500"
     }
   ];
 
@@ -76,15 +82,17 @@ export const HowItWorks = () => {
               return (
                 <div
                   key={index}
-                  className={`relative p-8 rounded-2xl bg-card border border-border hover:shadow-xl transition-all duration-700 ${
+                  className={`group relative p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:shadow-2xl hover:scale-105 transition-all duration-700 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                   }`}
                   style={{ transitionDelay: `${index * 0.1}s` }}
                 >
-                  <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
+                  <div className={`absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br ${step.gradient} flex items-center justify-center font-bold text-lg text-white shadow-lg`}>
                     {index + 1}
                   </div>
-                  <Icon className="w-12 h-12 text-primary mb-4" />
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
                   <h3 className="text-xl font-bold mb-2 text-foreground">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
                 </div>

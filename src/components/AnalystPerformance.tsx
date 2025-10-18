@@ -43,7 +43,7 @@ export const AnalystPerformance = () => {
             <span className="text-gradient-accent">What Actually Works</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Move from opinions to data. Discover which analysts and which calls generate the most trading activity.
+            Move from opinions to data. Discover the most profitable calls using revenue-per-call insights.
           </p>
         </div>
 
