@@ -3,7 +3,7 @@ import { FileText, Brain, Smartphone, BarChart3, Sparkles, Zap, Target, Trending
 import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
 import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
-import mobileAppVisual from "@/assets/mobile-app-visual.jpg";
+import mobileAppVisual from "@/assets/mobile-app-visual.png";
 import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 export const ProductSuite = () => {
@@ -163,7 +163,7 @@ export const ProductSuite = () => {
                             product.title === "Co-Analyst AI" 
                               ? { transform: "rotateY(-5deg) rotateZ(-2deg)", transformStyle: "preserve-3d", objectFit: "cover", objectPosition: "left center" }
                               : product.title === "Native Mobile Experience"
-                              ? { height: "60%", objectFit: "contain", objectPosition: "center" }
+                              ? { height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }
                               : undefined
                           }
                         />
