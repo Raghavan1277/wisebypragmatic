@@ -19,7 +19,7 @@ export const Hero = () => {
           {/* Main headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-2xl">
             <span className="block mb-2 text-white">Stop Guessing.</span>
-            <span className="block bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent drop-shadow-lg">
+            <span className="block text-white drop-shadow-lg">
               Start Knowing.
             </span>
           </h1>
