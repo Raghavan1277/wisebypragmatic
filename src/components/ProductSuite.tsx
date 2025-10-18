@@ -122,10 +122,10 @@ export const ProductSuite = () => {
                 }`}
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
-                <div className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden`}>
+                <div className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden ${product.title === "Co-Analyst AI" ? "max-w-5xl mx-auto" : ""}`}>
                   <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
                     {/* Text Content Column */}
-                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
+                    <div className={`${product.title === "Co-Analyst AI" ? "p-6 lg:p-8" : "p-8 lg:p-12"} flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
                       <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center mb-6`}>
                         <Icon className="w-8 h-8 text-foreground" />
                       </div>
