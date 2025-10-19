@@ -171,9 +171,16 @@ export const ProductSuite = () => {
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
                                   ? "bg-cover bg-left-top"
-                                  : "bg-cover bg-top"
+                                  : product.title === "Co-Analyst AI"
+                                    ? "bg-cover animate-[scroll-bg-vertical_20s_ease-in-out_infinite]"
+                                    : "bg-cover bg-top"
                           }`}
-                          style={{ backgroundImage: `url(${product.image})` }}
+                          style={{ 
+                            backgroundImage: `url(${product.image})`,
+                            ...(product.title === "Co-Analyst AI" && {
+                              backgroundPosition: "center top"
+                            })
+                          }}
                           aria-hidden="true"
                         />
                       ) : (
