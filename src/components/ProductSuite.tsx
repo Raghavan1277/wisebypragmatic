@@ -213,15 +213,21 @@ export const ProductSuite = () => {
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
-                                  ? "bg-cover bg-center transition-all duration-100 ease-linear"
+                                  ? "bg-cover bg-left-top transition-all duration-100 ease-linear"
                                   : product.title === "Co-Analyst AI"
                                     ? "bg-cover transition-all duration-100 ease-linear"
                                     : "bg-cover bg-top"
                           }`}
                           style={{ 
                             backgroundImage: `url(${product.image})`,
-                            ...((product.title === "Co-Analyst AI" || product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") && {
+                            ...(product.title === "Co-Analyst AI" && {
                               backgroundPosition: `center ${scrollPositions[index] || 0}%`
+                            }),
+                            ...(product.title === "Native Mobile Experience" && {
+                              backgroundPosition: `center ${scrollPositions[index] || 0}%`
+                            }),
+                            ...(product.title === "Advanced Analytics" && {
+                              backgroundPosition: `left ${scrollPositions[index] || 0}%`
                             })
                           }}
                           aria-hidden="true"
