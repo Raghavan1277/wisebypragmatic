@@ -32,7 +32,7 @@ export const ProductSuite = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      products.forEach((_, index) => {
+      products.forEach((product, index) => {
         const element = document.getElementById(`product-${index}`);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -42,13 +42,23 @@ export const ProductSuite = () => {
           
           // Calculate scroll progress when element is in viewport
           if (elementTop < windowHeight && elementTop + elementHeight > 0) {
-            const progress = Math.max(0, Math.min(1, 
-              (windowHeight - elementTop) / (windowHeight + elementHeight)
-            ));
+            let progress;
+            
+            // Native Mobile Experience: starts at 0% (top) and scrolls down to reveal
+            if (product.title === "Native Mobile Experience") {
+              progress = Math.max(0, Math.min(100, 
+                ((windowHeight - elementTop) / (windowHeight + elementHeight)) * 100
+              ));
+            } else {
+              // Other products: normal parallax from 0 to 100
+              progress = Math.max(0, Math.min(100, 
+                ((windowHeight - elementTop) / (windowHeight + elementHeight)) * 100
+              ));
+            }
             
             setScrollPositions(prev => ({
               ...prev,
-              [index]: progress * 100
+              [index]: progress
             }));
           }
         }
