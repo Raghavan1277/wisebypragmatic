@@ -40,20 +40,26 @@ export const ProductSuite = () => {
           const elementHeight = rect.height;
           const windowHeight = window.innerHeight;
           
-          // Calculate scroll progress when element is in viewport
+          // Calculate scroll progress only when element is significantly in viewport
+          const viewportCenter = windowHeight / 2;
+          const elementCenter = elementTop + (elementHeight / 2);
+          
           if (elementTop < windowHeight && elementTop + elementHeight > 0) {
             let progress;
             
-            // Native Mobile Experience & Advanced Analytics: starts at 0% (top) and scrolls down to reveal
+            // Calculate progress based on element position relative to viewport center
+            // This creates a slower, more controlled scroll effect
+            const scrollRange = windowHeight + elementHeight;
+            const currentPosition = windowHeight - elementTop;
+            const normalizedProgress = (currentPosition / scrollRange) * 100;
+            
+            // Slow down the scroll effect by reducing the range (0-30% instead of 0-100%)
             if (product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") {
-              progress = Math.max(0, Math.min(100, 
-                ((windowHeight - elementTop) / (windowHeight + elementHeight)) * 100
-              ));
+              progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
+            } else if (product.title === "Co-Analyst AI") {
+              progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
             } else {
-              // Other products: normal parallax from 0 to 100
-              progress = Math.max(0, Math.min(100, 
-                ((windowHeight - elementTop) / (windowHeight + elementHeight)) * 100
-              ));
+              progress = 0; // No scroll effect for others
             }
             
             setScrollPositions(prev => ({
