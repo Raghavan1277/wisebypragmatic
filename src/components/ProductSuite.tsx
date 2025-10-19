@@ -213,7 +213,7 @@ export const ProductSuite = () => {
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
-                                  ? "bg-cover bg-left-top transition-all duration-100 ease-linear"
+                                  ? "bg-auto bg-left-top bg-no-repeat transition-all duration-100 ease-linear"
                                   : product.title === "Co-Analyst AI"
                                     ? "bg-cover transition-all duration-100 ease-linear"
                                     : "bg-cover bg-top"
