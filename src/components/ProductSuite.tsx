@@ -44,8 +44,8 @@ export const ProductSuite = () => {
           if (elementTop < windowHeight && elementTop + elementHeight > 0) {
             let progress;
             
-            // Native Mobile Experience: starts at 0% (top) and scrolls down to reveal
-            if (product.title === "Native Mobile Experience") {
+            // Native Mobile Experience & Advanced Analytics: starts at 0% (top) and scrolls down to reveal
+            if (product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") {
               progress = Math.max(0, Math.min(100, 
                 ((windowHeight - elementTop) / (windowHeight + elementHeight)) * 100
               ));
@@ -213,14 +213,14 @@ export const ProductSuite = () => {
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
-                                  ? "bg-cover bg-left-top"
+                                  ? "bg-cover bg-center transition-all duration-100 ease-linear"
                                   : product.title === "Co-Analyst AI"
                                     ? "bg-cover transition-all duration-100 ease-linear"
                                     : "bg-cover bg-top"
                           }`}
                           style={{ 
                             backgroundImage: `url(${product.image})`,
-                            ...((product.title === "Co-Analyst AI" || product.title === "Native Mobile Experience") && {
+                            ...((product.title === "Co-Analyst AI" || product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") && {
                               backgroundPosition: `center ${scrollPositions[index] || 0}%`
                             })
                           }}
