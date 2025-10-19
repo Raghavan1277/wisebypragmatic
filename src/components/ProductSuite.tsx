@@ -166,7 +166,7 @@ export const ProductSuite = () => {
                         <div
                           className={`absolute inset-0 ${
                             product.title === "Native Mobile Experience"
-                              ? "bg-contain bg-center bg-no-repeat"
+                              ? "bg-contain bg-center bg-no-repeat animate-[scroll-bg-vertical_20s_ease-in-out_infinite]"
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
@@ -177,7 +177,7 @@ export const ProductSuite = () => {
                           }`}
                           style={{ 
                             backgroundImage: `url(${product.image})`,
-                            ...(product.title === "Co-Analyst AI" && {
+                            ...((product.title === "Co-Analyst AI" || product.title === "Native Mobile Experience") && {
                               backgroundPosition: "center top"
                             })
                           }}
