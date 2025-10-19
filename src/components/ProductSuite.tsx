@@ -113,11 +113,11 @@ export const ProductSuite = () => {
       description: "Beautiful, branded mobile apps that make your research impossible to ignore.",
       features: [
         "Dedicated iOS & Android apps with your branding",
+        "Lightweight SDKs to integrate with your existing Web and Mobile Apps",
         "Swipe-friendly research cards designed for mobile",
         "One-tap trading intent to capture client interest",
         "Offline access for poor connectivity areas",
-        "Fully customisable and modular architecture",
-        "Lightweight SDKs to integrate with your existing web and mobile apps",
+        "Fully customisable and modular architecture",        
       ],
       gradient: "from-accent/20 to-accent/5",
       borderColor: "border-accent/30",
@@ -195,7 +195,7 @@ export const ProductSuite = () => {
                             <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                               <Zap className="w-3 h-3 text-primary" />
                             </div>
-                            <span className="text-sm text-foreground">{feature}</span>
+                            <span className={`text-sm text-foreground ${feature === "Lightweight SDKs to integrate with your existing Web and Mobile Apps" ? "font-bold" : ""}`}>{feature}</span>
                           </div>
                         ))}
                       </div>
