@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import researchDashboard from "@/assets/research-control-collage.png";
 import coAnalystVisual from "@/assets/co-analyst-visual.jpg";
 import mobileAppVisual from "@/assets/wise_ios_dashboard.png";
-import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
+import analyticsDashboard from "@/assets/user-analytics-dashboard.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
