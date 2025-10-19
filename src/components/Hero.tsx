@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import bannerBg from "@/assets/banner_BG.jpg";
+import bannerBg from "@/assets/banner_BG1.jpg";
 export const Hero = () => {
   return <section className="relative flex items-start pt-32 pb-8 justify-center overflow-hidden">
       {/* Background Image */}
