@@ -18,10 +18,10 @@ export const ProductSuite = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const element = document.getElementById('product-suite');
+    const element = document.getElementById("product-suite");
     if (element) {
       observer.observe(element);
     }
@@ -38,12 +38,12 @@ export const ProductSuite = () => {
       features: [
         "Smart research creation with pre-built templates",
         "Maker-checker workflow for quality control",
-        "Multi-channel distribution (app, WhatsApp, email, SMS)",
-        "Call lifecycle management (carry-forward, exit, book profit)"
+        "Multi-channel distribution support (In-App Push, WhatsApp, Email, SMS)",
+        "Call lifecycle management (carry-forward, exit, book profit)",
       ],
       gradient: "from-primary/20 to-primary/5",
       borderColor: "border-primary/30",
-      image: researchDashboard
+      image: researchDashboard,
     },
     {
       icon: Brain,
@@ -54,11 +54,11 @@ export const ProductSuite = () => {
         "Multi-factor analysis (technical + fundamental + news + events)",
         "Real-time market context from 50+ data sources",
         "Customizable parameters to match your investment style",
-        "Clear confidence scoring with specific reasoning"
+        "Clear confidence scoring with specific reasoning",
       ],
       gradient: "from-secondary/20 to-secondary/5",
       borderColor: "border-secondary/30",
-      image: coAnalystVisual
+      image: coAnalystVisual,
     },
     {
       icon: Smartphone,
@@ -71,11 +71,11 @@ export const ProductSuite = () => {
         "One-tap trading intent to capture client interest",
         "Offline access for poor connectivity areas",
         "Fully customisable and modular architecture",
-        "Lightweight SDKs to integrate with your existing web and mobile apps"
+        "Lightweight SDKs to integrate with your existing web and mobile apps",
       ],
       gradient: "from-accent/20 to-accent/5",
       borderColor: "border-accent/30",
-      image: mobileAppVisual
+      image: mobileAppVisual,
     },
     {
       icon: BarChart3,
@@ -86,26 +86,26 @@ export const ProductSuite = () => {
         "Analyst performance tracking",
         "Client engagement analytics",
         "Revenue attribution (connect calls to trading activity)",
-        "Real-time business intelligence"
+        "Real-time business intelligence",
       ],
       gradient: "from-primary/20 via-secondary/10 to-accent/10",
       borderColor: "border-primary/30",
-      image: analyticsDashboard
-    }
+      image: analyticsDashboard,
+    },
   ];
 
   return (
     <section id="product-suite" className="py-4 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div
+          className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Complete Product Suite</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            One Platform. Complete Control.
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">One Platform. Complete Control.</h2>
         </div>
 
         {/* Products - Full Width Cards */}
@@ -113,23 +113,29 @@ export const ProductSuite = () => {
           {products.map((product, index) => {
             const Icon = product.icon;
             const isEven = index % 2 === 0;
-            
+
             return (
               <div
                 key={index}
                 className={`transition-all duration-700 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
-                <div className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden`}>
-                  <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? 'lg:grid-flow-dense' : ''}`}>
+                <div
+                  className={`rounded-3xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} hover:shadow-2xl transition-all overflow-hidden`}
+                >
+                  <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? "lg:grid-flow-dense" : ""}`}>
                     {/* Text Content Column */}
-                    <div className={`${product.title === "Co-Analyst AI" ? "p-6 lg:p-8" : "p-8 lg:p-12"} flex flex-col justify-center ${!isEven ? 'lg:col-start-2' : ''}`}>
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center mb-6`}>
+                    <div
+                      className={`${product.title === "Co-Analyst AI" ? "p-6 lg:p-8" : "p-8 lg:p-12"} flex flex-col justify-center ${!isEven ? "lg:col-start-2" : ""}`}
+                    >
+                      <div
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${product.gradient} border ${product.borderColor} flex items-center justify-center mb-6`}
+                      >
                         <Icon className="w-8 h-8 text-foreground" />
                       </div>
-                      
+
                       <div className="mb-6">
                         <h3 className="text-2xl lg:text-3xl font-bold mb-2 text-foreground">{product.title}</h3>
                         <p className="text-primary font-medium mb-4">{product.subtitle}</p>
@@ -153,14 +159,19 @@ export const ProductSuite = () => {
                     </div>
 
                     {/* Image/Visual Column */}
-                    <div className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? 'lg:col-start-1' : ''}`}>
+                    <div
+                      className={`relative ${product.title === "Co-Analyst AI" ? "min-h-[150px] lg:min-h-[180px]" : product.title === "Native Mobile Experience" ? "" : "min-h-[400px] lg:min-h-[500px]"} bg-gradient-to-br ${product.gradient} flex items-center justify-center overflow-hidden ${!isEven ? "lg:col-start-1" : ""}`}
+                    >
                       {product.image ? (
                         <div
                           className={`absolute inset-0 ${
-                            product.title === "Native Mobile Experience" ? "bg-contain bg-center bg-no-repeat" :
-                            product.title === "Research Control Center" ? "bg-cover bg-left-top" :
-                            product.title === "Advanced Analytics" ? "bg-cover bg-left-top" :
-                            "bg-cover bg-top"
+                            product.title === "Native Mobile Experience"
+                              ? "bg-contain bg-center bg-no-repeat"
+                              : product.title === "Research Control Center"
+                                ? "bg-cover bg-left-top"
+                                : product.title === "Advanced Analytics"
+                                  ? "bg-cover bg-left-top"
+                                  : "bg-cover bg-top"
                           }`}
                           style={{ backgroundImage: `url(${product.image})` }}
                           aria-hidden="true"
@@ -185,7 +196,6 @@ export const ProductSuite = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );
