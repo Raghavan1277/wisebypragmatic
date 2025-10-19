@@ -36,7 +36,7 @@ export const ProblemStatement = () => {
   }, {
     icon: Shield,
     title: "Compliance Anxiety",
-    description: "Constantly worrying about SEBI audit trails and manual compliance reporting.",
+    description: "Constantly worrying about audit trails and manual compliance reporting.",
     color: "from-blue-500/20 to-blue-500/5"
   }];
   return <section id="problem-statement" className="py-20 bg-gradient-to-b from-background to-muted/30">
