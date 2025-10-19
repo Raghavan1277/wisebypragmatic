@@ -8,6 +8,7 @@ import analyticsDashboard from "@/assets/analytics-dashboard.jpg";
 
 export const ProductSuite = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollPositions, setScrollPositions] = useState<Record<number, number>>({});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +28,37 @@ export const ProductSuite = () => {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      products.forEach((_, index) => {
+        const element = document.getElementById(`product-${index}`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top;
+          const elementHeight = rect.height;
+          const windowHeight = window.innerHeight;
+          
+          // Calculate scroll progress when element is in viewport
+          if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+            const progress = Math.max(0, Math.min(1, 
+              (windowHeight - elementTop) / (windowHeight + elementHeight)
+            ));
+            
+            setScrollPositions(prev => ({
+              ...prev,
+              [index]: progress * 100
+            }));
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const products = [
@@ -117,6 +149,7 @@ export const ProductSuite = () => {
             return (
               <div
                 key={index}
+                id={`product-${index}`}
                 className={`transition-all duration-700 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
@@ -166,19 +199,19 @@ export const ProductSuite = () => {
                         <div
                           className={`absolute inset-0 ${
                             product.title === "Native Mobile Experience"
-                              ? "bg-cover bg-center animate-[scroll-bg-vertical_20s_ease-in-out_infinite]"
+                              ? "bg-cover bg-center transition-all duration-100 ease-linear"
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
                                   ? "bg-cover bg-left-top"
                                   : product.title === "Co-Analyst AI"
-                                    ? "bg-cover animate-[scroll-bg-vertical_20s_ease-in-out_infinite]"
+                                    ? "bg-cover transition-all duration-100 ease-linear"
                                     : "bg-cover bg-top"
                           }`}
                           style={{ 
                             backgroundImage: `url(${product.image})`,
                             ...((product.title === "Co-Analyst AI" || product.title === "Native Mobile Experience") && {
-                              backgroundPosition: "center top"
+                              backgroundPosition: `center ${scrollPositions[index] || 0}%`
                             })
                           }}
                           aria-hidden="true"
