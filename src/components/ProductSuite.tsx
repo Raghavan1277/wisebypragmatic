@@ -32,42 +32,40 @@ export const ProductSuite = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      products.forEach((product, index) => {
-        const element = document.getElementById(`product-${index}`);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top;
-          const elementHeight = rect.height;
-          const windowHeight = window.innerHeight;
-          
-          // Calculate scroll progress only when element is significantly in viewport
-          const viewportCenter = windowHeight / 2;
-          const elementCenter = elementTop + (elementHeight / 2);
-          
-          if (elementTop < windowHeight && elementTop + elementHeight > 0) {
-            let progress;
+      requestAnimationFrame(() => {
+        products.forEach((product, index) => {
+          const element = document.getElementById(`product-${index}`);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            const elementTop = rect.top;
+            const elementHeight = rect.height;
+            const windowHeight = window.innerHeight;
             
-            // Calculate progress based on element position relative to viewport center
-            // This creates a slower, more controlled scroll effect
-            const scrollRange = windowHeight + elementHeight;
-            const currentPosition = windowHeight - elementTop;
-            const normalizedProgress = (currentPosition / scrollRange) * 100;
-            
-            // Slow down the scroll effect by reducing the range (0-30% instead of 0-100%)
-            if (product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") {
-              progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
-            } else if (product.title === "Co-Analyst AI") {
-              progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
-            } else {
-              progress = 0; // No scroll effect for others
+            // Calculate scroll progress only when element is in viewport
+            if (elementTop < windowHeight && elementTop + elementHeight > 0) {
+              let progress;
+              
+              // Calculate progress based on element position
+              const scrollRange = windowHeight + elementHeight;
+              const currentPosition = windowHeight - elementTop;
+              const normalizedProgress = (currentPosition / scrollRange) * 100;
+              
+              // Slow down the scroll effect (0-30% range instead of 0-100%)
+              if (product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") {
+                progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
+              } else if (product.title === "Co-Analyst AI") {
+                progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
+              } else {
+                progress = 0;
+              }
+              
+              setScrollPositions(prev => ({
+                ...prev,
+                [index]: progress
+              }));
             }
-            
-            setScrollPositions(prev => ({
-              ...prev,
-              [index]: progress
-            }));
           }
-        }
+        });
       });
     };
 
@@ -215,13 +213,13 @@ export const ProductSuite = () => {
                         <div
                           className={`absolute inset-0 ${
                             product.title === "Native Mobile Experience"
-                              ? "bg-cover bg-center transition-all duration-100 ease-linear"
+                              ? "bg-cover bg-center"
                               : product.title === "Research Control Center"
                                 ? "bg-cover bg-left-top"
                                 : product.title === "Advanced Analytics"
-                                  ? "bg-auto bg-left-top bg-no-repeat transition-all duration-100 ease-linear"
+                                  ? "bg-auto bg-left-top bg-no-repeat"
                                   : product.title === "Co-Analyst AI"
-                                    ? "bg-cover transition-all duration-100 ease-linear"
+                                    ? "bg-cover"
                                     : "bg-cover bg-top"
                           }`}
                           style={{ 
