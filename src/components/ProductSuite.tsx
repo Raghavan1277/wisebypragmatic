@@ -50,11 +50,11 @@ export const ProductSuite = () => {
               const currentPosition = windowHeight - elementTop;
               const normalizedProgress = (currentPosition / scrollRange) * 100;
               
-              // Slow down the scroll effect (0-30% range instead of 0-100%)
+              // Increase scroll effect speed (0-50% range with faster multiplier)
               if (product.title === "Native Mobile Experience" || product.title === "Advanced Analytics") {
-                progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
+                progress = Math.max(0, Math.min(50, normalizedProgress * 0.6));
               } else if (product.title === "Co-Analyst AI") {
-                progress = Math.max(0, Math.min(30, normalizedProgress * 0.3));
+                progress = Math.max(0, Math.min(50, normalizedProgress * 0.6));
               } else {
                 progress = 0;
               }
